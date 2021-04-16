@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="view_venta_tree"  model="ir.ui.view">
+        <field name="name"> vista lista del modelo venta </field>
+        <field name="model">venta</field>
+        <field name="arch"  type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="cliente"/>
+                <field name="fch_venta"/>
+                <field name="fch_vencimiento" invisible="1"/>
+                <field name="cliente_frecuente"/>
+                <field name="image"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="view_venta_form"  model="ir.ui.view">
+        <field name="name"> vista formulario del modelo venta </field>
+        <field name="model">venta</field>
+        <field name="arch"  type="xml">
+            <form>
+                <header>
+                    <field name="state"  widget="statusbar"  />
+                    <button string="Confirmar" type="object" name="confirmar" class="oe_highlight" states="draft"/>
+                    <button string="Cancelar" type="object" name="cancelar" class="oe_highlight" states="draft,done"/>
+
+
+                </header>
+
+                <sheet>
+<!--                    <center>-->
+<!--                         <h1 style="color:red">ESTE ES EL TITULO</h1>-->
+
+<!--                    </center>-->
+
+                       <center>
+                           <h1><field name="correlativo" readonly="1"/></h1>
+
+                       </center>
+
+
+
+                       <group>
+                          <group>
+
+                              <field name="name"  required="1"  />
+                              <field name="cliente"/>
+                              <field name="sexo"/>
+                              <field name="image" widget='image' />
+                              <field name="socio" options='{"no_open": True, "no_create": True}'/>
+
+                          </group>
+                           <group>
+                               <field name="fch_venta"/>
+                               <field name="fch_vencimiento"/>
+                               <field name="cliente_frecuente"/>
+                               <field name="edad"  attrs="{'invisible': [('cliente_frecuente', '=', False)]}"/>
+                               <field name="peso"/>
+                               <field name="archivo"/>
+                               <field name="producto"/>
+                               <field name="categorias" widget="many2many_tags" />
+                               <field name="currency_id" options='{"no_open": True, "no_create": True}'/>
+
+                           </group>
+
+
+                        </group>
+                        <notebook>
+                            <page string="Detalles">
+                                <field name="detalles_ids">
+                                    <tree editable="botton">
+                                        <field name="producto"/>
+                                        <field name="precio"/>
+                                        <field name="cantidad"/>
+                                        <field name="total"  readonly="1"  force_save="1"/>
+                                        <field name="currency_id"  invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="Datos adicionales">
+
+                                <group>
+                                    <group>
+                                         <field name="fch_venta"/>
+                                         <field name="fch_vencimiento"/>
+                                         <field name="cliente_frecuente"/>
+
+
+                                    </group>
+
+                                    <group>
+                                        <field name="archivo"/>
+                                        <field name="producto"/>
+
+                                    </group>
+
+                                </group>
+
+                            </page>
+                         </notebook>
+                    <center>
+                        <h1>
+                        <field name="total_final"/>
+
+                        </h1>
+                    </center>
+
+
+
+                    <field name="comentario"  placeholder="Escribe aqui tu comentario"  />
+
+
+                        <script>
+                            console.log('hola mundo');
+                        </script>
+
+
+
+                </sheet>
+
+
+
+
+            </form>
+
+        </field>
+    </record>
+
+
+
+
+</odoo>

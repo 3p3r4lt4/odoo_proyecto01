@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="catgory_venta"  model="ir.module.category">
+         <field name="name"> Venta Eduardo</field>
+         <field name="sequence">1</field>
+
+    </record>
+
+
+
+</odoo>

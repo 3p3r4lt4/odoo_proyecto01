@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <act_window id="action_open_venta"
+                name="Venta"
+                res_model="venta"
+                view_mode="tree,form"/>
+
+    <act_window id="action_open_productos_especializados"
+                name="Productos Especializados"
+                res_model="productos.especializados"
+                view_mode="tree,form"/>
+
+
+
+    <menuitem id="menu_root_venta"  name="Venta eduardo" />
+    <menuitem id="menu_horizontal_venta"  name="Modelos"  parent="menu_root_venta"   />
+    <menuitem id="menu_vertical_venta"  name="Venta"  parent="menu_horizontal_venta"
+    action="action_open_venta"/>
+
+    <menuitem id="menu_vertical_productos_especializados "  name="Productos Especializados"  parent="menu_horizontal_venta"
+    action="action_open_productos_especializados"/>
+
+
+</odoo>
+

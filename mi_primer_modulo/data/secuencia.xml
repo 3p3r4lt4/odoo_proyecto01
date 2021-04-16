@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="mi_secuencia" model="ir.sequence">
+        <field name="name">Secuencia para ventas Eduardo</field>
+        <field name="implementation">no_gap</field>
+        <field name="code">mi_secuencia</field>
+        <field name="prefix">F001-</field>
+        <field name="suffix">-%(year)s</field>
+        <field name="padding">8</field>
+        <field name="number_increment">1</field>
+
+    </record>
+
+</odoo>
