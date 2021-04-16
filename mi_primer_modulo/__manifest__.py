@@ -2,7 +2,7 @@
     'name': "Mi primer modulo",
     'version': '1.0',
     'depends': ['base'],
-    'author': "Eduardo peralta",
+    'author': "Eduardo peralta quicaño",
     'website': "https://www.google.com",
     'summary': "esto es demo",
     'category': 'Mi propia categoria',
